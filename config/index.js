@@ -1,4 +1,5 @@
-module.exports = {
-    GMAIL: process.env.REACT_APP_GMAIL,
-    GMAIL_PASSWORD: process.env.REACT_APP_GMAIL_PW
+if (process.env.NODE_ENV == 'production') {
+    module.exports = require('./index.js')
+} else {
+    module.exports = require('./dev.js')
 }
